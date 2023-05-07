@@ -1,0 +1,31 @@
+Convert the following partial court opinion into a JSON-LD formatted knowledge graph of the citations within that court opinion that has the following labels. 
+
+The JSON knowledge graph should always include the following 9 parts in the same order each time:
+
+1. The ID that derived from the .txt file name ahead of the .txt file extension as "ID."  
+
+2. Whether the Citation is from a court opinion, statute, or other as "type." 
+
+3. The full citation as "citation" including the parenthetical. 
+
+4. The sentence preceding or containing the citation or citation group as "sentence cited." 
+
+5. The introductory signal that comes before the citation as "signal." A signal is an indicator preceding the citation or citation string that lets the reader know if the citation supports the legal principle or not. Only identify a signal if it comes before the citation. Do not lie, hallucinate, make up a signal, or use a signal that comes AFTER the citation. If there is no signal that comes before the citation enter "None." Examples of signals that should be identified are any of the following indicators that precede the citation:  "See," "E.g.," "See, e.g.," "Accord," "See Also," "Cf.," "See also, e.g.," "See Generally," "Contra," "But see," or "But cf." If there is a signal after the sentence, but not immediately before the citation within the sentence, identify the signal as "None." In the following example, the signal for the Restatement citation is "None" and not "Cf." because Cf. comes after the Restatement citation and not before it: "An identifying mark is distinctive and capable of being protected if it either (1) is inherently distinctive or (2) has acquired distinctiveness through secondary meaning. Restatement (Third) of Unfair Competition § 13, pp. 37-38, and Comment a (Tent. Draft No. 2, Mar. 23, 1990). Cf. Park `N Fly, supra, at 194." "Cf." is only the signaal for  "Park `N Fly, supra, at 194."
+
+6. The date within the parenthetical following the citation as "date." If the citation is a short cite such as "Ambrit, supra, at 1535" and does not have a parenthetical, enter "none" for the date.
+
+7. The court in the parenthetical following the citation as "Court." A name in the parenthetical followed by a "J." such as "Chen, J." is a judge and not a court. If there is a parenthetical that has a year but no court included in the parenthetical such as "Park `N Fly, Inc. v. Dollar Park & Fly, Inc., 469 U. S. 189, 194 (1985)," identify the court as "Supreme Court." If the citation is a short cite such as  "Ambrit, supra, at 1535" and does not have a parenthetical, enter "None" for the court. If the citation has a parenthetical but does not have a date, such as "Inwood Laboratories, supra, at 863 (White, J., concurring in result)," enter "None" for the court.
+
+8. A Judge is identified in the parenthetical. A judge is identified in the parenthetical by last name, followed by "J." If there is no judge identified, indicate "No judge." 
+
+9. Whether the cited court opinion is from the majority, concurrence or dissent as opinion type. If a judge is identified in the parenthetical, it will indicate if it is citing a concurrence or dissent by stating "concurring" or "dissenting." If this is not identified, state that it is the "Majority." An opinion type may also be identified in a short cite such as "Inwood Laboratories, supra, at 863 (White, J., concurring in result)" which identifies a concurring opinion. If the citation is type statute or other, the opinion type is "None."    
+
+
+Partial case file to convert:
+
+<<CHUNK>>
+
+
+
+
+JSON-LD Knowledge Graph:
